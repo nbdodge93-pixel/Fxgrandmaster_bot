@@ -18,7 +18,7 @@ def index():
             reply = f"ሰላም! መልዕክትህ ደርሶኛል: '{text}'"
             send_message(chat_id, reply)
         return "OK", 200
-    return "🤖 ቦቱ በሰላም እየሰራ ነው", 200
+    return "Bot is running", 200
 
 def send_message(chat_id, text):
     url = f"{URL}/sendMessage"
@@ -26,5 +26,5 @@ def send_message(chat_id, text):
     requests.post(url, json=payload)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
