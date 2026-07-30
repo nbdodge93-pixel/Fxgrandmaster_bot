@@ -15,11 +15,10 @@ def index():
             chat_id = update["message"]["chat"]["id"]
             text = update["message"].get("text", "")
             
-            # ለቴሌግራም መልዕክት የሚሰጠው ምላሽ
             reply = f"ሰላም! መልዕክትህ ደርሶኛል: '{text}'"
             send_message(chat_id, reply)
         return "OK", 200
-    return "🤖 የቴሌግራም AI ቦት በሰላም እየሰራ ነው!", 200
+    return "🤖 ቦቱ በሰላም እየሰራ ነው", 200
 
 def send_message(chat_id, text):
     url = f"{URL}/sendMessage"
